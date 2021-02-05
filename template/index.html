@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Tabelando</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet"  href="assets/jquery-growl/stylesheets/jquery-growl.css"/>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="">
+								<img src="images/inv.png" alt="icon">
+							</span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Tabelando</h1>
+								<p>Controle seus gastos aqui :)</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#Data">Vamos lá</a></li>
+								<li><a href="#Search"> Seus Dados</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Data -->
+							<article id="Data">
+								<h4 class="major">Dados</h4>
+								<form method="post" action="#">
+									<div class="fields">							
+										<div class="field half">
+												<label for="id_category">Categoria</label>
+												<select name="id_category" id="id_category">
+													<option value="">Cadastre um categoria</option>
+												</select>
+										</div>
+										<div class="field half">
+												<label for="amount_spent">Valor Gasto</label>
+												<input type="text" name="amount_spent" id="amount_spent" class="second" />
+										</div>
+										<div class="field half">
+												<label for="date">Data Final</label>
+												<input type="date" name="date" id="date" class="second"/>
+										</div>
+
+									</div>
+
+									
+									<ul class="actions">
+										<li>
+											<button type="button" class="primary" id="btn-register_spent">
+												Registrar
+											</button>
+										</li>
+									</ul>
+								</form>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="date">Registre uma nova categoria aqui</label>
+											<input type="text" name="name" id="name" />
+											<ul class="actions"></ul>
+											<ul class="actions">
+			
+												<li>
+													<button type="button" class="primary" id="btn-register_spent">
+														Adicionar
+													</button>
+												</li>
+											</ul>
+										</div>		
+									</div>
+								</form>
+								
+							</article>
+
+						<!-- Search  -->
+							<article id="Search">
+								<h2 class="major">Search </h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" />
+											<li><input type="submit" value="Search" class="second" /></li>
+											
+										</div>		
+									</div>
+								</form>
+						
+							</article>
+
+						
+
+						<!-- Elements -->
+							<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									
+									
+									<blockquote></blockquote>
+									
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+							</article>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/jquery-growl/javascripts/jquery-growl.js"></script>
+
+			<script src="assets/js/requests/categories/read.js"></script>
+			<script src="assets/js/requests/categories/create.js"></script>
+			<script src="assets/js/requests/categories/update.js"></script>
+			
+			<script src="assets/js/requests/spending/create.js"></script>
+			<script src="assets/js/requests/spending/read.js"></script>
+	</body>
+</html>
