@@ -15,6 +15,7 @@ $("#btn-register_spent").click(function(answer) {
             $.growl.notice({
                 message : data.success
             });
+            $("#table_spending").DataTable().destroy();
             getAllSpending();
         } else {
             $.growl.error({

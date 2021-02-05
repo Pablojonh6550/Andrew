@@ -11,15 +11,17 @@ function getAllSpending()
             $.each(data, function(idx, value) {
                 $("#tbody_spending").append(`
                     <tr>
-                        <td>${value.id}</td>
-                        <td>${value.title}</td>
-                        <td>${value.period}</td>
-                        <td>${value.spend_target}</td>
-                        <td>${value.amount}</td>
-                        <td>${value.date}</td>
+                        <td style="color:black;">${value.id}</td>
+                        <td style="color:black;">${value.title}</td>
+                        <td style="color:black;">${value.period}</td>
+                        <td style="color:black;">${value.spend_target}</td>
+                        <td style="color:black;">${value.amount}</td>
+                        <td style="color:black;">${value.date}</td>
                     </tr>
                 `);
             });
+
+            $("#table_spending").DataTable();
         }
     });
 }
@@ -27,5 +29,6 @@ function getAllSpending()
 getAllSpending();
 
 $("#Store").click(function() {
+    $("#table_spending").DataTable().destroy();
     getAllSpending();
 });

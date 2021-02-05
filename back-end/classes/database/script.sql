@@ -43,7 +43,7 @@ CREATE TABLE `categories` (
 CREATE TABLE `spending` (
   `id` int(11) NOT NULL,
   `category_fk` int(11) NOT NULL,
-  `amount` decimal(6,2) NOT NULL
+  `amount` decimal(6,2) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

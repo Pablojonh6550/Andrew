@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet"  href="assets/jquery-growl/stylesheets/jquery-growl.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css"/>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 	</head>
@@ -17,11 +18,6 @@
 
 				<!-- Header -->
 					<header id="header">
-						<div class="logo">
-							<span class="">
-								<img src="images/inv.png" alt="icon">
-							</span>
-						</div>
 						<div class="content">
 							<div class="inner">
 								<h1>Tabelando</h1>
@@ -43,11 +39,11 @@
 						<!-- Data -->
 							<article id="Data">
 								<h4 class="major">Dados</h4>
+								<div class="field half">
+									<label class="title">Registre um novo gasto aqui</label>
+								</div>
 								<form method="post" action="#">
 									<div class="fields">
-										<div class="field half">
-											<label>Registre um novo gasto aqui</label>
-										</div>
 										<div class="field half">
 												<label for="id_category">Categoria</label>
 												<select name="id_category" id="id_category">
@@ -60,7 +56,7 @@
 										</div>
 										<div class="field half">
 												<label for="date">Data Final</label>
-												<input type="date" name="date" id="date" class="second"/>
+												<input type="date" name="date" id="date" class="input-date"/>
 										</div>
 
 									</div>
@@ -76,17 +72,23 @@
 								</form>
 								<div class="fields">
 									<div class="field half">
-										<label for="title">Registre uma nova categoria aqui</label>
+										<label for="title" class="title">Registre uma nova categoria aqui</label>
 										<input type="text" name="title" id="title" placeholder="Título" />
-										<label for="period">Período</label>
-										<select name="period" id="period">
-											<option>semanal</option>
-											<option>mensal</option>
-											<option>anual</option>
-										</select>
+									</div>
+									<div class="field half mt">
 										<label for="spend_target">Meta de Gasto</label>
 										<input type="text" name="spend_target" id="spend_target" />
+									</div>
+									<div class="field half mt">
+										<label for="period" class="mt-5">Período</label>
+										<select name="period" id="period">
+											<option>SEMANAL</option>
+											<option>MENSAL</option>
+											<option>ANUAL</option>
+										</select>
+									</div>
 
+									<div class="field half mt">
 										<ul class="actions">			
 											<li>
 												<button type="button" class="primary" id="btn-register_category">
@@ -94,7 +96,7 @@
 												</button>
 											</li>
 										</ul>
-									</div>		
+									</div>
 								</div>
 
 								<table>
@@ -116,18 +118,7 @@
 
 						<!-- Search  -->
 							<article id="Search">
-								<h2 class="major">Search </h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" />
-											<li><input type="submit" value="Search" class="second" /></li>
-											
-										</div>		
-									</div>
-								</form>
-
-								<table>
+								<table id="table_spending">
 									<thead>
 										<th>#</th>
 										<th>Título</th>
@@ -188,7 +179,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
 			<script src="assets/jquery-growl/javascripts/jquery-growl.js"></script>
+			<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>
 
 			<script src="assets/js/requests/categories/read.js"></script>
 			<script src="assets/js/requests/categories/create.js"></script>
