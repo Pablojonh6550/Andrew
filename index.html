@@ -43,11 +43,11 @@
 						<!-- Data -->
 							<article id="Data">
 								<h4 class="major">Dados</h4>
+								<div class="field half">
+									<label class="title">Registre um novo gasto aqui</label>
+								</div>
 								<form method="post" action="#">
 									<div class="fields">
-										<div class="field half">
-											<label>Registre um novo gasto aqui</label>
-										</div>
 										<div class="field half">
 												<label for="id_category">Categoria</label>
 												<select name="id_category" id="id_category">
@@ -60,7 +60,7 @@
 										</div>
 										<div class="field half">
 												<label for="date">Data Final</label>
-												<input type="date" name="date" id="date" class="second"/>
+												<input type="date" name="date" id="date" class="input-date"/>
 										</div>
 
 									</div>
@@ -76,17 +76,23 @@
 								</form>
 								<div class="fields">
 									<div class="field half">
-										<label for="title">Registre uma nova categoria aqui</label>
+										<label for="title" class="title">Registre uma nova categoria aqui</label>
 										<input type="text" name="title" id="title" placeholder="Título" />
-										<label for="period">Período</label>
-										<select name="period" id="period">
-											<option>semanal</option>
-											<option>mensal</option>
-											<option>anual</option>
-										</select>
+									</div>
+									<div class="field half mt">
 										<label for="spend_target">Meta de Gasto</label>
 										<input type="text" name="spend_target" id="spend_target" />
+									</div>
+									<div class="field half mt">
+										<label for="period" class="mt-5">Período</label>
+										<select name="period" id="period">
+											<option>SEMANAL</option>
+											<option>MENSAL</option>
+											<option>ANUAL</option>
+										</select>
+									</div>
 
+									<div class="field half mt">
 										<ul class="actions">			
 											<li>
 												<button type="button" class="primary" id="btn-register_category">
@@ -94,7 +100,7 @@
 												</button>
 											</li>
 										</ul>
-									</div>		
+									</div>
 								</div>
 
 								<table>
