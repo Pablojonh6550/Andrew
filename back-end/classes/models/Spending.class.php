@@ -46,7 +46,7 @@ class Spending
         try {
             $sql = "SELECT " . self::TABLE . ".id, amount, title, period, spend_target, date
                     FROM " . self::TABLE . "
-                    INNER JOIN category ON category_fk = category.id 
+                    INNER JOIN categories ON category_fk = categories.id 
                     ";
 
             $stmt = $connection->prepare($sql);

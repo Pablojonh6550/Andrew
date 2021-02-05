@@ -1,17 +1,21 @@
-$("#btn-register_category").click(function(answer) {
+$("#btn-register_spent").click(function(answer) {
     var data = {
-        id : $("#id").val(),
-        spend_target : $("#spend_target").val(),
-        method : 'PUT',
+        data : {
+            category_fk : $("#id_category").val(),
+            amount : $("#amount_spent").val(),
+            date : $("#date").val(),
+        },
+        method : 'POST',
     };
 
-    $.post(categories_URL, data, function(answer) {
+    $.post(spending_URL, data, function(answer) {
         var data = JSON.parse(answer);
 
         if (typeof data['error'] == "undefined") {
             $.growl.notice({
                 message : data.success
             });
+            getAllSpending();
         } else {
             $.growl.error({
                 message : data.error
