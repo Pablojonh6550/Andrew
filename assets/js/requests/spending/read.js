@@ -28,7 +28,11 @@ function getAllSpending()
 
 getAllSpending();
 
+<<<<<<< HEAD
 $("#Spending").click(function() {
+=======
+$("#Store").click(function() {
+>>>>>>> 996aadfee984fa224dc0d27d0ca214ddefe37a93
     $("#table_spending").DataTable().destroy();
     getAllSpending();
 });
