@@ -1,4 +1,4 @@
-const categories_URL  = "back-end/controllers/ControllerCategories.php";
+const categories_URL  = "/back-end/controllers/ControllerCategories.php";
 
 function getAllCategories()
 {
@@ -12,6 +12,8 @@ function getAllCategories()
                 <option disabled selected value="">Selecione uma Categoria</option>
             `);
 
+            $("#tbody_categories").html(``);
+            
             $.each(data, function(idx, value) {
                 $("#id_category").append(`
                     <option value="${value.id}">${value.title}</option>

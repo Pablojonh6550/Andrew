@@ -4,19 +4,14 @@ require_once "../classes/database/Connection.class.php";
 class Spending 
 {
 
-    private object $MySQL;
     public const TABLE = "spending";
-
-    public function __construct()
-    {
-        $this->MySQL = new Connection();
-    }
     
     /*======================================================================================*/
 
     public function store($data) 
     {
-        $connection = $this->MySQL->getConnection();
+        $connect = new Connection();
+        $connection = $connect->getConnection();
 
         try {
             $sql = "INSERT INTO " . self::TABLE . " 
@@ -40,8 +35,10 @@ class Spending
 
     /*======================================================================================*/
 
-    public function getAll() {
-        $connection = $this->MySQL->getConnection();
+    public function getAll() 
+    {
+        $connect = new Connection();
+        $connection = $connect->getConnection();
 
         try {
             $sql = "SELECT " . self::TABLE . ".id, amount, title, period, spend_target, date

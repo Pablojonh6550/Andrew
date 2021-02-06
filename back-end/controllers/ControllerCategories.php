@@ -1,14 +1,13 @@
 <?php
 
-require_once '../classes/models/Categories.class.php';
+include '../classes/models/Categories.class.php';
 require_once 'functions.php';
 
 $Categories = new Categories();
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET')
+if (!isset($_POST['method']))
     echo json_encode($Categories->getAll());
-else 
-if (isset($_POST['method'])) {
+else {
     switch ($_POST['method']) {
         case 'POST':
             $data = (isset($_POST['data'])) ? $_POST['data'] : [];

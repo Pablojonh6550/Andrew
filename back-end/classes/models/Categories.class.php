@@ -5,19 +5,14 @@ require_once "../classes/database/Connection.class.php";
 class Categories 
 {
 
-    private object $MySQL;
     public const TABLE = "categories";
-
-    public function __construct()
-    {
-        $this->MySQL = new Connection();
-    }
     
     /*======================================================================================*/
 
     public function store($data) 
     {
-        $connection = $this->MySQL->getConnection();
+        $connect = new Connection();
+        $connection = $connect->getConnection();
 
         try {
             $sql = "INSERT INTO " . self::TABLE . " 
@@ -41,8 +36,10 @@ class Categories
 
     /*======================================================================================*/
 
-    public function getAll() {
-        $connection = $this->MySQL->getConnection();
+    public function getAll() 
+    {
+        $connect = new Connection();
+        $connection = $connect->getConnection();
 
         try {
             $sql = "SELECT * FROM " . self::TABLE;
@@ -67,9 +64,11 @@ class Categories
 
     /*======================================================================================*/
 
-    public function edit($id, $spend_target) {
-        $connection = $this->MySQL->getConnection();
-
+    public function edit($id, $spend_target) 
+    {
+        $connect = new Connection();
+        $connection = $connect->getConnection();
+        
         try {
             $sql = "UPDATE " . self::TABLE . " 
                     SET spend_target = :spend_target
